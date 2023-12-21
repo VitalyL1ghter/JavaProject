@@ -2,7 +2,7 @@ package ru.innopolis.homework02;
 
 import java.util.Scanner;
 
-public class task2 {
+public class TaskTwo {
     public static void main(String[] args) {
         Scanner numone = new Scanner(System.in);
         System.out.print("введите первое целое число ");
