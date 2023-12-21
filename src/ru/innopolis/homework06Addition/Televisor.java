@@ -9,6 +9,13 @@ class Televisor {
     private int volume;
     private boolean turnOn;
     private Chanel targetChanel;
+
+      public Televisor(String model, Chanel[] channels) {
+        this.model = model;
+        this.channels = channels;
+    }
+
+
     public Televisor(String model, Chanel[] channels, Chanel targetChanel, int volume, boolean turnOn) {
         this.model = model;
         this.channels = channels;
@@ -16,16 +23,7 @@ class Televisor {
         this.volume = volume;
         this.turnOn = turnOn;
     }
-    @Override
-    public String toString() {
-        return new StringJoiner(", ", "" + "", "")
-                .add("model =  " + model + "'")
-                .add("channels = " + Arrays.toString(channels))
-                .add("volume = " + volume)
-                .add("turnOn = " + turnOn)
-                .add("targetChanel = " + targetChanel)
-                .toString();
-    }
+
     public int getVolume() {
         return volume;
     }
@@ -50,8 +48,19 @@ class Televisor {
     public void changeChanel() {
         targetChanel = channels[(int) (Math.random() * channels.length)];
     }
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", "" + "", "")
+                .add("model =  " + model + "'")
+                .add("channels = " + Arrays.toString(channels))
+                .add("volume = " + volume)
+                .add("turnOn = " + turnOn)
+                .add("targetChanel = " + targetChanel)
+                .toString();
+    }
 
 }
+
 
 
 

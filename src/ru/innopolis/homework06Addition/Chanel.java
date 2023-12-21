@@ -9,6 +9,9 @@ public class Chanel {
     private Program[] programs;
     private Program targetProgram;
 
+    public Chanel() {
+    }
+
     public Chanel(String nameChanel, int numberChanel, Program[] programs) {
         this.nameChanel = nameChanel;
         this.numberChanel = numberChanel;
@@ -18,14 +21,7 @@ public class Chanel {
     private Program getRandomProgram() {
         return programs[(int) (Math.random() * programs.length)];
     }
-    @Override
-    public String toString() {
-        return new StringJoiner(", ",  "" + "", "")
-                .add("nameChanel = '" + nameChanel + "'")
-                .add("numberChanel = " + numberChanel)
-                .add("programs = " + Arrays.toString(programs))
-                .toString();
-    }
+
     public String getNameChanel() {
         return nameChanel;
     }
@@ -49,5 +45,13 @@ public class Chanel {
     }
     public void setTargetProgram(Program targetProgram) {
         this.targetProgram = targetProgram;
+    }
+    @Override
+    public String toString() {
+        return new StringJoiner(", ",  "" + "", "")
+                .add("nameChanel = '" + nameChanel + "'")
+                .add("numberChanel = " + numberChanel)
+                .add("programs = " + Arrays.toString(programs))
+                .toString();
     }
 }
