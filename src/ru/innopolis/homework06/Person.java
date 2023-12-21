@@ -6,6 +6,10 @@ public class Person {
     private String name;
     private double cash;
     private final Product[] products = new Product[10];
+
+    public Person() {
+    }
+
     public Person(String name, double cash) {
         this.name = name;
         this.cash = cash;
