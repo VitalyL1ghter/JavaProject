@@ -1,17 +1,17 @@
 package ru.innopolis.homework01;
 
-public class Main {
+public class Game {
     String res; // строковая переменная
 
     public static void main(String[] args) {
-        Main[] Game = new Main[3];
+        Game[] games = new Game[3];
         int z;
-        Game[0] = new Main(); // создаем 3 объекта и присваиваем их элементам массива
-        Game[1] = new Main();
-        Game[2] = new Main();
-        Game[0].res = "Камень"; // получаем доступ к переменной res
-        Game[1].res = "Ножницы";
-        Game[2].res = "Бумага";
+        games[0] = new Game(); // создаем 3 объекта и присваиваем их элементам массива
+        games[1] = new Game();
+        games[2] = new Game();
+        games[0].res = "Камень"; // получаем доступ к переменной res
+        games[1].res = "Ножницы";
+        games[2].res = "Бумага";
         int x;
         int y;
 
@@ -19,9 +19,9 @@ public class Main {
         y = (int) (Math.random() * 3); // случайный выбор от 0 до 2 для Пети
         System.out.println("Игра началась !");
         z = x;
-        System.out.println("Вася выбросил " + Game[z].res); // вывод на экран случайного выброса Васи
+        System.out.println("Вася выбросил " + games[z].res); // вывод на экран случайного выброса Васи
         z = y;
-        System.out.println("Петя выбросил " + Game[z].res); // вывод на экран случайного выброса Пети
+        System.out.println("Петя выбросил " + games[z].res); // вывод на экран случайного выброса Пети
         if (x == y) {
             System.out.println("Ничья, попробуйте заново !");
         }

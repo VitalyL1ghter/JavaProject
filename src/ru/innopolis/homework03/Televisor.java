@@ -1,5 +1,5 @@
 package ru.innopolis.homework03;
-class televisor {
+class Televisor {
     private String name;
     private int diag;
     private String color;
@@ -10,9 +10,9 @@ class televisor {
         String ch = chanellList [chanell];
         return "на Телевизоре " + getName() + " включен канал: " + ch;
     }
-    public televisor(){
+    public Televisor(){
     }
-public televisor (String name, int diag, String color){
+public Televisor(String name, int diag, String color){
         this.name = name;
         this.diag = diag;
         this.color = color;

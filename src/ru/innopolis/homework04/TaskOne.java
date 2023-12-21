@@ -3,7 +3,7 @@ package ru.innopolis.homework04;
 import java.util.Scanner;
 import java.lang.String;
 
-public class task1 {
+public class TaskOne {
 
     public static void main(String[] args) {
 

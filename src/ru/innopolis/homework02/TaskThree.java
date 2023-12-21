@@ -2,7 +2,7 @@ package ru.innopolis.homework02;
 
 import java.util.Scanner;
 
-public class task3 {
+public class TaskThree {
 
     public static void main(String[] args) {
         System.out.println("Исходная строка: JAVA");
