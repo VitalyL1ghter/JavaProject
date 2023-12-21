@@ -1,14 +1,14 @@
 package ru.innopolis.homework01;
 
-public class Main {
+public class Game {
     String res; // строковая переменная
 
     public static void main(String[] args) {
-        Main[] Game = new Main[3];
+        Game[] Game = new Game[3];
         int z;
-        Game[0] = new Main(); // создаем 3 объекта и присваиваем их элементам массива
-        Game[1] = new Main();
-        Game[2] = new Main();
+        Game[0] = new Game(); // создаем 3 объекта и присваиваем их элементам массива
+        Game[1] = new Game();
+        Game[2] = new Game();
         Game[0].res = "Камень"; // получаем доступ к переменной res
         Game[1].res = "Ножницы";
         Game[2].res = "Бумага";
