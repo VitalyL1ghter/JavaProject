@@ -1,6 +1,7 @@
 package ru.innopolis.homework07;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.StringJoiner;
 
 class DiscountProduct extends Product {
@@ -36,9 +37,25 @@ class DiscountProduct extends Product {
     public LocalDate getDiscountCostLast() {
         return discountCostDate;
     }
+    public boolean checkDiscount() {
+        return discountCostDate.isAfter(LocalDate.now());
+    }
 
     public void setDiscountCostLast(LocalDate discountCostLast) {
         this.discountCostDate = discountCostLast;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof DiscountProduct that)) return false;
+        if (!super.equals(o)) return false;
+        return Double.compare(that.getDiscountPercentage(), getDiscountPercentage()) == 0 && Double.compare(that.getDiscountCost(), getDiscountCost()) == 0 && Objects.equals(discountCostDate, that.discountCostDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getDiscountPercentage(), getDiscountCost(), discountCostDate);
     }
 
     @Override
@@ -51,7 +68,5 @@ class DiscountProduct extends Product {
                 .toString();
     }
 
-    public boolean checkDiscount() {
-        return discountCostDate.isAfter(LocalDate.now());
-    }
+
 }

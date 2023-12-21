@@ -17,11 +17,11 @@ class Product {
 
     public String getProductName() {
         if (productName == null || productName.isEmpty()) {
-            throw new RuntimeException(productName + "   Недопустимое имя продукта");
+            throw new IllegalArgumentException(productName + "   Недопустимое имя продукта");
         } else if (productName.length() < 3) {
-            throw new RuntimeException(productName + "  Недопустимое имя продукта");
+            throw new IllegalArgumentException(productName + "  Недопустимое имя продукта");
         } else if (!Pattern.matches("[а-яА-я\s]+", productName)) {
-            throw new RuntimeException(productName + "  Недопустимое имя продукта");
+            throw new IllegalArgumentException(productName + "  Недопустимое имя продукта");
         }
         return productName;
     }

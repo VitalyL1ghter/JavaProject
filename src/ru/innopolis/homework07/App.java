@@ -16,7 +16,7 @@ public class App {
         for (Product newProduct : products) {
             try {
                 System.out.println(newProduct.getProductName() + "=" + newProduct.getCost());
-            } catch (RuntimeException ex) {
+            } catch (IllegalArgumentException ex) {
                 System.out.println(ex.getMessage());
             }
         }
