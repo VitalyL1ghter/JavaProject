@@ -3,7 +3,7 @@ package ru.innopolis.homework04;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class task3 {
+public class TaskThree {
     public static void main(String[] args) {
         Scanner word = new Scanner(System.in);
         System.out.println("Введите 1 слово на английском языке: ");
@@ -19,6 +19,7 @@ public class task3 {
         var sortedw2 = new String(charArray1);
 
         System.out.println("Результат сортировки: " + sortedw1 + " " + sortedw2);
+        word.close();
     }
 
 }
