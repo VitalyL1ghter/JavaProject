@@ -9,6 +9,9 @@ class Televisor {
     private int volume;
     private boolean turnOn;
 
+    public Televisor() {
+    }
+
     public Televisor(String model, int chanell, int volume, boolean turnOn) {
         this.model = model;
         this.chanell = chanell;
