@@ -32,7 +32,7 @@ class Product {
 
     public double getCost() {
         if (cost <= 0) {
-            throw new RuntimeException(productName + "  " + cost + "   Недопустимое значение стомости продукта");
+            throw new RuntimeException(productName + "  " + cost + "  Недопустимое значение стомости продукта");
         }
         return cost;
     }

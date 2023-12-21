@@ -15,7 +15,7 @@ public class App {
         System.out.println("Список продуктов с ценами :");
         for (Product newProduct : products) {
             try {
-                System.out.println(newProduct.getProductName() + "=" + newProduct.getCost());
+                System.out.println(newProduct.getProductName() + " = " + newProduct.getCost());
             } catch (IllegalArgumentException ex) {
                 System.out.println(ex.getMessage());
             }

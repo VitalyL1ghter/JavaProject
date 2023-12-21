@@ -17,6 +17,7 @@ class DiscountProduct extends Product {
     }
 
     public double getDiscountPercentage() {
+
         return discountPercentage;
     }
 
