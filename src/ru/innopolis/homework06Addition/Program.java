@@ -8,10 +8,20 @@ public class Program {
     private int ratingProgram;
     private int viewerProgram;
 
+    public Program() {
+    }
+
     public Program(String nameProgram) {
         this.nameProgram = nameProgram;
         this.ratingProgram = getRandomRatingProgram();
         this.viewerProgram = getRandomViewerProgram();
+    }
+
+    private int getRandomRatingProgram() {
+        return (int) (Math.random() * 100);
+    }
+    private int getRandomViewerProgram() {
+        return (int) (Math.random() * 1000);
     }
     @Override
     public String toString() {
@@ -21,11 +31,6 @@ public class Program {
                 .add("viewerProgram = " + viewerProgram)
                 .toString();
     }
-    private int getRandomRatingProgram() {
-        return (int) (Math.random() * 100);
-    }
-    private int getRandomViewerProgram() {
-        return (int) (Math.random() * 1000);
-    }
 }
+
 

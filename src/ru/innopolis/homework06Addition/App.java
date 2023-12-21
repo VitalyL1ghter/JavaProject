@@ -25,7 +25,7 @@ public class App {
                 boolean turnOn = turnOnS.equalsIgnoreCase("Да");
                 newTele[i] = new Televisor(model, getAllChannels(), getChanelByNumber(numberChanel), volume, turnOn);
 
-            }
+            } scanner.close();
 
         System.out.println("Список включенных телевизоров с громкостью от 50 до 100 : ");
         for (Televisor tv : newTele) {
