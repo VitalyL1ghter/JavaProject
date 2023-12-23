@@ -7,6 +7,10 @@ public class Person implements Serializable {
     private String name;
     private double cash;
     private final List<Product> products = new ArrayList<>();
+
+    public Person() {
+    }
+
     public Person(String name, double cash) {
         this.name = name;
         this.cash = cash;
@@ -38,11 +42,18 @@ public class Person implements Serializable {
     }
     @Override
     public String toString() {
-        return new StringJoiner(", ", Person.class.getSimpleName() + "[", "]")
-                .add("name='" + name + "'")
-                .add("cash=" + cash)
-                .add("products=" + products)
-                .toString();
+        return new StringJoiner(", ",   "[", "]")
+                .add("" + name + "'")
+                .add("" + cash)
+                .add("" + products)
+                .toString()
+                .replace(",", "")
+                .replace("[", "")
+                .replace("]", "")
+                .replace("'", "")
+                .trim();
+
+
     }
     public void byuProduct(Product product) {
         if (product.getCost() > cash) {
