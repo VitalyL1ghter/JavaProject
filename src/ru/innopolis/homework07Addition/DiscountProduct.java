@@ -8,6 +8,9 @@ public class DiscountProduct extends Product {
     private double discountCost;
     public LocalDate discountCostDate = LocalDate.now();
 
+    public DiscountProduct() {
+    }
+
     public DiscountProduct(String productName, double cost, double discountPercentage) {
         super(productName, cost);
         this.discountPercentage = discountPercentage;
@@ -43,6 +46,7 @@ public class DiscountProduct extends Product {
         this.discountCostDate = discountCostLast;
     }
 
+    @Override
     public String toString() {
         return (new StringJoiner(" ", "", ""))
                 .add(this.getProductName() + " -")
