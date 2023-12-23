@@ -8,38 +8,42 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws IOException {
+        File inputFilePerson = new File("C:\\Users\\l1\\IdeaProjects\\JavaProject\\src\\ru\\innopolis\\homework08\\Person.txt");
+        File inputFileProduct = new File("C:\\Users\\l1\\IdeaProjects\\JavaProject\\src\\ru\\innopolis\\homework08\\Product.txt");
+        File outputFileResult = new File("C:\\Users\\l1\\IdeaProjects\\JavaProject\\src\\ru\\innopolis\\homework08\\Result.txt");
 
-        Scanner s = new Scanner(new File("C:\\Users\\l1\\IdeaProjects\\JavaProject\\src\\ru\\innopolis\\homework08\\Person.txt"));
+        Scanner s = new Scanner(inputFilePerson);
         ArrayList<Person> personList = new ArrayList<Person>();
         while (s.hasNextLine()) {
             String[] line = s.nextLine().split("=");
             personList.add(new Person(line[0], Double.parseDouble(line[1])));
         }
         s.close();
-        System.out.println(personList);
+        personList.forEach(System.out::println);
 
-        s = new Scanner(new File("C:\\Users\\l1\\IdeaProjects\\JavaProject\\src\\ru\\innopolis\\homework08\\Product.txt"));
+
+        s = new Scanner(inputFileProduct);
         ArrayList<Product> productList = new ArrayList<Product>();
         while (s.hasNextLine()) {
             String[] line = s.nextLine().split("=");
             productList.add(new Product(line[0], Double.parseDouble(line[1])));
         }
         s.close();
-        System.out.println(productList);
-        FileOutputStream outputStream = new FileOutputStream("C:\\Users\\l1\\IdeaProjects\\JavaProject\\src\\ru\\innopolis\\homework08\\Result.txt");
+        productList.forEach(System.out::println);
+        FileOutputStream outputStream = new FileOutputStream(outputFileResult);
 
 
-        for (Person d : personList) {
-            String buyerString = "Покупает: " + d.getName();
+        for (Person persons : personList) {
+            String buyerString = "Покупает: " + persons.getName();
             System.out.println(buyerString);
             writeFile(outputStream, buyerString);
-            if (d.getCash() < 0) {
+            if (persons.getCash() < 0) {
                 String str = "Отрицательное число денег";
                 System.out.println("Отрицательное число денег");
                 writeFile(outputStream, str);
                 continue;
             }
-            if (d.getCash() == 0) {
+            if (persons.getCash() == 0) {
                 String str = "Нет денег";
                 System.out.println("Нет денег");
                 writeFile(outputStream, str);
@@ -48,12 +52,12 @@ public class App {
             try {
                 for (int i = 0; i < 3; i++) {
                     Product product = productList.get((int) (Math.random() * productList.size()));
-                    d.byuProduct(product);
+                    persons.byuProduct(product);
                     String buyString = "Купил: " + product.getProductName();
                     System.out.println(buyString);
                     writeFile(outputStream, buyString);
                 }
-            } catch (Exception ex) {
+            } catch (RuntimeException ex) {
                 System.out.println(ex.getMessage());
                 writeFile(outputStream, ex.getMessage());
             }

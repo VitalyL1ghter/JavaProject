@@ -7,6 +7,10 @@ import java.util.StringJoiner;
 public class Product implements Serializable {
     private String productName;
     private double cost;
+
+    public Product() {
+    }
+
     public Product(String productName, double cost) {
         this.productName = productName;
         this.cost = cost;
