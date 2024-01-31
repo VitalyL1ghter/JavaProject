@@ -1,8 +1,10 @@
-package attestation01.repositories;
-import attestation01.exeption.InvaliDataExeption;
-import attestation01.exeption.UserNotFoundException;
-import attestation01.model.User;
-import attestation01.readWriteFile.ReadWriteUtils;
+package repositories;
+
+import exeption.InvaliDataExeption;
+import exeption.UserNotFoundException;
+import model.User;
+import readWriteFile.ReadWriteUtils;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -12,10 +14,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import static attestation01.readWriteFile.ReadUserFromFile.getUserFromFile;
+
+import static readWriteFile.ReadUserFromFile.getUserFromFile;
 
 public class UsersRepositoryFileImpl implements UsersRepository {
-    private static final String path = "resources/userBase.txt";
+    private static final String PATH = "attestation01/src/main/resources/userBase.txt";
 
     @Override
     public void create(User user) {
@@ -29,6 +32,7 @@ public class UsersRepositoryFileImpl implements UsersRepository {
             e.printStackTrace(System.out);
         }
     }
+
     @Override
     public User findById(String id) {
         BufferedReader bufferedReader = ReadWriteUtils.getBufferedReader();
@@ -45,11 +49,13 @@ public class UsersRepositoryFileImpl implements UsersRepository {
         }
         return null;
     }
+
     @Override
     public List<User> findAll() {
         List<User> newUserBaseRep = getUserFromFile();
         return newUserBaseRep;
     }
+
     @Override
     public void update(String id, User user) {
 
@@ -62,6 +68,7 @@ public class UsersRepositoryFileImpl implements UsersRepository {
             throw new UserNotFoundException();
         }
         mapUser.put(id, user);
+        mapUser.forEach((User, users) -> System.out.println(users));
 
         try {
             BufferedWriter bufferedWriter = ReadWriteUtils.getBufferedReWriter();
@@ -73,9 +80,8 @@ public class UsersRepositoryFileImpl implements UsersRepository {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        newUserBaseRep.forEach(System.out::println);
     }
+
     @Override
     public List<User> deleteById(String id) {
 
@@ -94,10 +100,11 @@ public class UsersRepositoryFileImpl implements UsersRepository {
         return newUserBaseRep;
 
     }
+
     @Override
     public void deleteAll() {
         try {
-            PrintWriter writer = new PrintWriter(path);
+            PrintWriter writer = new PrintWriter(PATH);
             writer.print("");
             writer.flush();
             writer.close();

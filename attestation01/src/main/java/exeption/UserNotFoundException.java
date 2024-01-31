@@ -1,4 +1,4 @@
-package attestation01.exeption;
+package exeption;
 
 public class UserNotFoundException extends IllegalArgumentException {
     static final String MESSAGE = "Пользователя с данным id не найден";

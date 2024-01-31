@@ -1,4 +1,5 @@
-package attestation01.model;
+package model;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -6,6 +7,7 @@ import java.util.StringJoiner;
 public class User {
     public User() {
     }
+
     public User(String id, LocalDateTime date, String login,
                 String password, String confirmPassword,
                 String firstName, String name,
@@ -21,6 +23,7 @@ public class User {
         this.age = age;
         this.isWorker = isWorker;
     }
+
     private String id;
     private LocalDateTime date;
     private String login;

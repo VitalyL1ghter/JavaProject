@@ -1,5 +1,7 @@
-package attestation01.exeption;
-import attestation01.model.User;
+package exeption;
+
+import model.User;
+
 import java.util.InputMismatchException;
 import java.util.regex.Pattern;
 

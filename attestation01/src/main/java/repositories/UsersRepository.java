@@ -1,5 +1,7 @@
-package attestation01.repositories;
-import attestation01.model.User;
+package repositories;
+
+import model.User;
+
 import java.util.List;
 
 public interface UsersRepository {
@@ -8,7 +10,7 @@ public interface UsersRepository {
 
     User findById(String id);
 
-    List<User> findAll() ;
+    List<User> findAll();
 
     void update(String id, User user);
 

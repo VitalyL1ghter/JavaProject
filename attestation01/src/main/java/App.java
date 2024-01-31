@@ -1,6 +1,6 @@
-package attestation01;
-import attestation01.model.User;
-import attestation01.repositories.UsersRepositoryFileImpl;
+import model.User;
+import repositories.UsersRepositoryFileImpl;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -38,7 +38,7 @@ public class App {
 
         System.out.println("Пользователь id  921c1457-09bc-481f-9ac1-00ac147f42f9 был обновлен на пользователя " +
                 "с id 47b7701y-30f5-4933-b7ac-fb52896cr333 ");
-        System.out.println("Пользователи базы после замены пользователя");
+        System.out.println("Пользователи базы после удаления и замены пользователя");
         checkWork.update("921c1457-09bc-481f-9ac1-00ac147f42f9",
                 new User("47b7701y-30f5-4933-b7ac-fb52896cr333", LocalDateTime.now(), "nik555", "tttt",
                         "tttt", "Петров", "Петр", "Петрович", 47, false));

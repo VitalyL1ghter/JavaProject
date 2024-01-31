@@ -1,16 +1,20 @@
-package attestation01.readWriteFile;
-import attestation01.model.User;
-import java.io.*;
+package readWriteFile;
+
+import model.User;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReadUserFromFile {
-    private static final String path = "resources/userBase.txt";
+    private static final String PATH = "attestation01/src/main/resources/userBase.txt";
 
     public static List<User> getUserFromFile() {
         try {
-            BufferedReader UserReader = new BufferedReader(new FileReader(path));
+            BufferedReader UserReader = new BufferedReader(new FileReader(PATH));
             List<User> newUserBase = new ArrayList<>();
             String lines = UserReader.readLine();
             while (lines != null) {
