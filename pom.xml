@@ -17,7 +17,6 @@
         <junit.version>5.10.1</junit.version>
         <junit-jupiter-params.version>${junit.version}</junit-jupiter-params.version>
         <mockito.version>5.10.0</mockito.version>
-<!--        <source.plugin.version>3.2.0</source.plugin.version>-->
         <maven.surfire.version>3.0.0-M5</maven.surfire.version>
         <maven.jar.version>3.3.0</maven.jar.version>
     </properties>
