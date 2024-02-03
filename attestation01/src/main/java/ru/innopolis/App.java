@@ -1,3 +1,5 @@
+package ru.innopolis;
+
 import model.User;
 import repositories.UsersRepositoryFileImpl;
 
